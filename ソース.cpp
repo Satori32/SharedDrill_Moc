@@ -21,6 +21,32 @@ struct ConstType {
 	const T Value;
 };
 
+struct SATUDrill {//host
+	static ConstType T;
+	Vector<SATULinker> Linkers;
+};
+
+template<class T,T N>
+SATUDrill ConstructSATUDrill(size_t C) {
+	SATUDrill S = { {T,N}, };
+	S.Linkers = ConstructVector<SATULinker>(C);//need free;
+	//SATULinker L = ConstructSATULinker<SATUDrill, &S>();
+	return S;
+}
+
+struct SATULinker {
+	ConstType Rader;
+	typedef void* Word;
+	Word One;
+	Word Tow;
+	Word Three;
+};
+template<class T,T N>
+SATULinker ConstructSATULinker() {
+	SATULinker L = { {T,N}, };
+	return L;
+}
+
 template<class T,T N>
 ConstType ConstructConstType<T, N>() {
 	ConstType C{ T,N };
