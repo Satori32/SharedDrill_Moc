@@ -48,8 +48,14 @@ SharedDrill ConstructSharedDrill() {
 	return S;
 }
 
-ConstType MakeChild(SharedDrill& In) {
+ConstType MakeChild_Old(SharedDrill& In) {
 	ConstType C = ConstructConstType<In.Master.T*, &In.Master>();
+	Push(In.Childs, C);
+	return C;
+}
+
+ConstType MakeChild(const SharedDrill& In) {
+	ConstType C = ConstructConstType<SharedDrill, &In>();
 	Push(In.Childs, C);
 	return C;
 }
