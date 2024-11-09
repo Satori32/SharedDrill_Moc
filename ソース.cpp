@@ -22,7 +22,7 @@ struct ConstType {
 };
 
 struct SATUDrill {//host
-	static ConstType T;
+	ConstType Software;
 	Vector<SATULinker> Linkers;
 };
 
