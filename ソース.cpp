@@ -37,7 +37,7 @@ ConstType ConstructConstType<T, N>(ConstType& C) {
 
 struct SharedDrill {
 	static ConstType Master;
-	Vector<ConstType> Childs;
+	Vector<ConstType> Childs;//i confuse to why i have this line.
 };
 
 template<class T,T N,T* P>
